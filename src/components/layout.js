@@ -10,10 +10,15 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import "./layout.css"
-import 'bootstrap/dist/css/bootstrap.min.css';
+import NavBar from "./Globals/NavBar"
 
 const Layout = ({ children }) => {
-  return <>{children}</>
+  return (
+    <div className="font-body">
+      <NavBar />
+      {children}
+    </div>
+  )
 }
 
 Layout.propTypes = {
