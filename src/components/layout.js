@@ -14,7 +14,7 @@ import NavBar from "./Globals/NavBar"
 
 const Layout = ({ children }) => {
   return (
-    <div className="font-body">
+    <div className="font-body text-mainDark">
       <NavBar />
       {children}
     </div>

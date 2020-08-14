@@ -2,24 +2,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* body {
-  font-family: "Roboto", sans-serif;
-  padding: 0;
-  margin: 0;
-}
-
-header a {
-  color: #fff;
-  text-decoration: none;
-}
-
-header a:not(:nth-last-child(1)) {
-  margin-right: 15px;
-}
-
-.navBox {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
