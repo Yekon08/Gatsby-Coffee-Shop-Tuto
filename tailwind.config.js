@@ -7,11 +7,15 @@ module.exports = {
       },
 
       colors: {
-        mainBrown: "#2d1ef1",
+        mainBrown: "#2d1e1f",
         mainYellow: "#ff9e09",
         mainGrey: "#ece8dc",
         mainWhite: "#fff",
         mainDark: "#222",
+      },
+
+      minHeight: {
+        bgFullScreen: "calc(100vh - 80px)",
       },
     },
   },
