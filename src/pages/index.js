@@ -4,13 +4,19 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import BgSection from "../components/Globals/BgSection"
 import Info from "../components/Home/Info"
+import Menu from "../components/Home/Menu"
 
 const IndexPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Home" />
-      <BgSection img={data.img.childImageSharp.fluid} title="regular joe's" styleClass="min-h-bgFullScreen flex justify-center items-center bg-linear" />
+      <BgSection
+        img={data.img.childImageSharp.fluid}
+        title="regular joe's"
+        styleClass="min-h-bgFullScreen flex justify-center items-center bg-linear"
+      />
       <Info />
+      <Menu items={data.menu} />
     </Layout>
   )
 }
@@ -21,6 +27,25 @@ export const query = graphql`
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
+
+    menu: allContentfulCoffeeItem {
+      edges {
+        node {
+          id
+          title
+          description {
+            description
+          }
+          price
+          category
+          image {
+            fixed(width: 100, height: 100) {
+              ...GatsbyContentfulFixed_tracedSVG
+            }
+          }
         }
       }
     }
