@@ -39,11 +39,9 @@ const Menu = ({ items }) => {
 
     if (category === "all") {
       setArticles(tempItems)
-      console.log("all: ", tempItems)
     } else {
       let items = tempItems.filter(({ node }) => node.category === category)
       setArticles(items)
-      console.log("items: ", items)
     }
   }
 
@@ -54,6 +52,7 @@ const Menu = ({ items }) => {
           itemsFilter(category)
         }}
         key={category}
+        className="focus:outline-none uppercase mt-2 mr-3 last:mr-0 p-2 border-solid border-2 border-mainYellow rounded text-center text-xl text-mainYellow hover:bg-mainYellow hover:text-mainWhite"
       >
         {category}
       </button>
@@ -73,7 +72,7 @@ const Menu = ({ items }) => {
       </div>
     )
   } else {
-    return <p>probleeeeeeeeeeeeeme</p>
+    return <p>No products.</p>
   }
 }
 
