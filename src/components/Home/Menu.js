@@ -1,10 +1,22 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import Title from "../Globals/Title"
 import Img from "gatsby-image"
 
 const Menu = ({ items }) => {
-  console.log("items: ", items)
-  console.log("items length: ", items.edges.length)
+  const [category, setCategory] = useState([])
+  console.log("category : ", category)
+
+  // Functions
+  useEffect(() => {
+    // get category
+    let tempItems = items.edges.map(edge => {
+      return edge.node.category
+    })
+    let tempCategories = new Set(tempItems)
+    let categories = Array.from(tempCategories)
+    categories = ["all", ...categories]
+    setCategory(categories)
+  }, [])
 
   const itemsRender = items.edges.map(edge => {
     return (
@@ -22,6 +34,12 @@ const Menu = ({ items }) => {
     )
   })
 
+  const itemsFilter = category => {
+    let tempItems = items.edges.filter(({ node }) => node.category === category)
+    console.log("bonjour", tempItems)
+  }
+
+  //Render
   if (items.edges.length > 0) {
     return (
       <div className="text-center px-8 py-16 bg-gray-300">
@@ -29,6 +47,7 @@ const Menu = ({ items }) => {
         <h2 className="text-mainDark text-3xl font-light">
           these are our items
         </h2>
+        <button onClick={itemsFilter("Coffee")}>test</button>
         <div>{itemsRender}</div>
       </div>
     )
