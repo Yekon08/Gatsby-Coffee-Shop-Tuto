@@ -3,8 +3,8 @@ import Title from "../Globals/Title"
 import Img from "gatsby-image"
 
 const Menu = ({ items }) => {
+  const [articles, setArticles] = useState(items.edges)
   const [category, setCategory] = useState([])
-  console.log("category : ", category)
 
   // Functions
   useEffect(() => {
@@ -18,7 +18,7 @@ const Menu = ({ items }) => {
     setCategory(categories)
   }, [])
 
-  const itemsRender = items.edges.map(edge => {
+  const itemsRender = articles.map(edge => {
     return (
       <div
         key={edge.node.id}
@@ -35,9 +35,30 @@ const Menu = ({ items }) => {
   })
 
   const itemsFilter = category => {
-    let tempItems = items.edges.filter(({ node }) => node.category === category)
-    console.log("bonjour", tempItems)
+    let tempItems = items.edges
+
+    if (category === "all") {
+      setArticles(tempItems)
+      console.log("all: ", tempItems)
+    } else {
+      let items = tempItems.filter(({ node }) => node.category === category)
+      setArticles(items)
+      console.log("items: ", items)
+    }
   }
+
+  const buttonsCategories = category.map(category => {
+    return (
+      <button
+        onClick={() => {
+          itemsFilter(category)
+        }}
+        key={category}
+      >
+        {category}
+      </button>
+    )
+  })
 
   //Render
   if (items.edges.length > 0) {
@@ -47,7 +68,7 @@ const Menu = ({ items }) => {
         <h2 className="text-mainDark text-3xl font-light">
           these are our items
         </h2>
-        <button onClick={itemsFilter("Coffee")}>test</button>
+        <div>{buttonsCategories}</div>
         <div>{itemsRender}</div>
       </div>
     )
