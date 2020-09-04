@@ -17,6 +17,7 @@ module.exports = {
       minHeight: {
         bgFullScreen: "calc(100vh - 80px)",
         bgAboutScreen: "60vh",
+        img400: "400px",
       },
     },
   },

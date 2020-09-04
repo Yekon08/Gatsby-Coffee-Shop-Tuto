@@ -40,7 +40,7 @@ const Menu = ({ items }) => {
     if (category === "all") {
       setArticles(tempItems)
     } else {
-      let items = tempItems.filter(({ node }) => node.category === category)
+      let items = tempItems.filter(edge => edge.node.category === category)
       setArticles(items)
     }
   }
