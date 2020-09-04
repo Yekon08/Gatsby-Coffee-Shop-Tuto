@@ -29,8 +29,8 @@ const Products = () => {
       query={getProducts}
       render={data => {
         return (
-          <div className="mx-auto flex justify-center items-center flex-col pt-8">
-            <Title title="bonjour" />
+          <div className="mx-auto flex justify-center items-center flex-col py-8">
+            <Title title="Our Products" />
             <div className="flex justify-center items-center flex-wrap px-8">
               {data.products.edges.map(({ node: product }) => {
                 return <Product key={product.id} product={product} />
