@@ -12,7 +12,7 @@ const getProducts = graphql`
           title
           price
           image {
-            fixed(width: 250, height: 250) {
+            fixed(width: 300, height: 300) {
               src
               ...GatsbyContentfulFixed_tracedSVG
             }
@@ -29,12 +29,13 @@ const Products = () => {
       query={getProducts}
       render={data => {
         return (
-          <div className="mx-auto flex justify-center items-center flex-col">
+          <div className="mx-auto flex justify-center items-center flex-col pt-8">
             <Title title="bonjour" />
-            {console.log("data: ", data)}
-            {data.products.edges.map(({ node: product }) => {
-              return <Product key={product.id} product={product} />
-            })}
+            <div className="flex justify-center items-center flex-wrap px-8">
+              {data.products.edges.map(({ node: product }) => {
+                return <Product key={product.id} product={product} />
+              })}
+            </div>
           </div>
         )
       }}
