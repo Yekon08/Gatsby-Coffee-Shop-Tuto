@@ -47,7 +47,7 @@ export const query = graphql`
           category
           image {
             fixed(width: 100, height: 100) {
-              ...GatsbyContentfulFixed_tracedSVG
+              ...GatsbyContentfulFixed
             }
           }
         }

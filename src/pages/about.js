@@ -1,10 +1,10 @@
 import React from "react"
-import { link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import BgSection from "../components/Globals/BgSection"
-import Info from '../components/Home/Info'
+import Info from "../components/Home/Info"
 
 const AboutPage = ({ data }) => {
   return (

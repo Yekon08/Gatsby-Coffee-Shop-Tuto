@@ -14,7 +14,7 @@ const getProducts = graphql`
           image {
             fixed(width: 300, height: 300) {
               src
-              ...GatsbyContentfulFixed_tracedSVG
+              ...GatsbyContentfulFixed
             }
           }
         }
