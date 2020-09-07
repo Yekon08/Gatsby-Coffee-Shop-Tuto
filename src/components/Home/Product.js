@@ -8,7 +8,7 @@ const Product = ({ product }) => {
       <div className="flex flex-col justify-center items-center">
         <h6 className="mt-4 font-bold">{product.title}</h6>
         <h6 className="font-bold text-mainYellow">{product.price}$</h6>
-        <button className="uppercase mt-6 p-3 border-solid border-2 border-mainYellow rounded text-center text-xl text-mainYellow hover:bg-mainYellow hover:text-mainWhite">
+        <button className="uppercase mt-6 p-2 border-solid border-2 border-mainYellow rounded text-center text-xl text-mainYellow hover:bg-mainYellow hover:text-mainWhite">
           Add To Cart
         </button>
       </div>
