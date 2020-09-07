@@ -13,6 +13,7 @@
     "gatsby-plugin-postcss": "^2.3.11",
     "gatsby-plugin-react-helmet": "^3.3.10",
     "gatsby-plugin-sharp": "^2.6.25",
+    "gatsby-plugin-snipcartv3": "^2.3.2",
     "gatsby-source-contentful": "^2.3.41",
     "gatsby-source-filesystem": "^2.3.24",
     "gatsby-transformer-sharp": "^2.5.12",

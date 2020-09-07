@@ -14,7 +14,7 @@ const IndexPage = ({ data }) => {
       <SEO title="Home" />
       <BgSection
         img={data.img.childImageSharp.fluid}
-        title="regular joe's"
+        title="Coffee Shop"
         styleClass="min-h-bgFullScreen flex justify-center items-center bg-linear"
       />
       <Info />
