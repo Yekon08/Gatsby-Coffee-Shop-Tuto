@@ -5,7 +5,11 @@ const Contact = () => {
   return (
     <div className="mx-auto text-center px-8 py-16 bg-gray-300 text-xl flex justify-center items-center flex-col">
       <Title title="Contact Us !" />
-      <form className="w-1/2 text-left">
+      <form
+        className="w-1/2 text-left"
+        action="https://formspree.io/mvowerrv"
+        method="POST"
+      >
         <div className="flex justify-star flex-col mt-6">
           <label className="mb-1" htmlFor="name">
             Name
@@ -42,7 +46,7 @@ const Contact = () => {
           ></textarea>
         </div>
         <button
-          className="flex justify-center items-center mx-auto mt-6 uppercase py-3 px-10 border-solid border-2 border-mainYellow rounded text-center text-xl text-mainYellow hover:bg-mainYellow hover:text-mainWhite"
+          className="focus:outline-none flex justify-center items-center mx-auto mt-6 uppercase py-3 px-10 border-solid border-2 border-mainYellow rounded text-center text-xl text-mainYellow hover:bg-mainYellow hover:text-mainWhite"
           type="submit"
         >
           Send
